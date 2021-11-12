@@ -18,5 +18,15 @@
       <%= link_to 'My Lists', lists_path, class: 'nav-item nav-link my-link' %>
     </nav>
     <%= yield %>
+    <footer class="container d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+      <div class="col-md-4 d-flex align-items-center">
+        <span>2021 Made by Alena Bauer. With help from Le Wagon.</span>
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a href="https://www.linkedin.com/in/alenabauer/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        <li class="ms-3"><a href="https://github.com/alenabauer/" target="_blank"><i class="fab fa-github-square"></i></a></li>
+      </ul>
+    </footer>
   </body>
 </html>
