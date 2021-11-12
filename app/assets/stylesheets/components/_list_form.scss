@@ -1,20 +1,22 @@
 #new_list {
   display: flex;
-  width: 25%;
+  width: 50%;
   margin: 32px auto;
-  height: 48px;
+  height: 36px;
+  box-shadow: 2px 2px 5px rgba(black, 0.5);
+
   * {
     border: none;
     margin: none;
   }
   input[type='text']{
-    width: 75%;
+    width: 40%;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     padding: 16px;
   }
   input[type='submit']{
-    width: 25%;
+    width: 20%;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     font-size: 24px;
@@ -24,5 +26,8 @@
     &:hover{
       background-color: $red;
     }
+  }
+  .list_picture {
+    width: 40%;
   }
 }

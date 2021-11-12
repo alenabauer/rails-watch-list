@@ -6,19 +6,22 @@
 </div>
 <div class="container list-card-container">
   <% @lists.each do |list| %>
-    <%= link_to list_path(list.id), class: 'card list-card' do %>
-      <h3><%= list.name %></h3>
-      <% if list.movies.count == 1 %>
-        <p>1 movie</p>
-      <% elsif list.movies.count > 1 %>
-        <p><%= list.movies.count %> movies</p>
-      <% else %>
-        <p>No movies yet</p>
-      <% end %>
+    <%= link_to list_path(list.id) do %>
+      <div class="card list-card" style="background-image: url(<%= cl_image_path list.picture.key %>);" >
+        <h3><%= list.name %></h3>
+        <% if list.movies.count == 1 %>
+          <p>1 movie</p>
+        <% elsif list.movies.count > 1 %>
+          <p><%= list.movies.count %> movies</p>
+        <% else %>
+          <p>No movies yet</p>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
   <%= simple_form_for @list do |f| %>
     <%= f.input_field :name, placeholder: 'Add a new list', label: false, autocomplete: 'off' %>
+    <%= f.input :picture, as: :file, label: false %>
     <%= f.submit '+' %>
   <% end %>
