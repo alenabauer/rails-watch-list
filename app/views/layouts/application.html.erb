@@ -12,10 +12,12 @@
   <body>
     <div class="wrapper">
       <nav class="navbar my-nav container fixed-top">
-        <p class="navbar-brand">
-          <%= image_tag "logo.svg", alt: "logo", width: 70 %>
-          RailsWatchList
-        </p>
+        <%= link_to root_path do %>
+          <p class="navbar-brand">
+            <%= image_tag "logo.svg", alt: "logo", width: 70 %>
+            RailsWatchList
+          </p>
+        <% end %>
         <%= link_to 'My Lists', lists_path, class: 'nav-item nav-link my-link' %>
       </nav>
       <%= yield %>
