@@ -12,8 +12,8 @@ require 'dotenv'
 Dotenv.load('../.env')
 API_KEY = ENV['TMDB_API']
 
-n = 5
-while n < 15 do
+n = 40
+while n < 70 do
   url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{API_KEY}&language=en-US&page=#{n}"
   movies_serialized = URI.open(url).read
   movies = JSON.parse(movies_serialized)['results']
