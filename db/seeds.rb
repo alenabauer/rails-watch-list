@@ -12,20 +12,25 @@ require 'dotenv'
 Dotenv.load('../.env')
 API_KEY = ENV['TMDB_API']
 
-url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{API_KEY}&language=en-US&page=4"
-movies_serialized = URI.open(url).read
-movies = JSON.parse(movies_serialized)['results']
+n = 5
+while n < 15 do
+  url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{API_KEY}&language=en-US&page=#{n}"
+  movies_serialized = URI.open(url).read
+  movies = JSON.parse(movies_serialized)['results']
 
-puts 'Creating movies...'
+  puts 'Creating movies...'
 
-movies.each do |movie|
-  puts "Adding #{movie['original_title']}"
-  Movie.create!({
-    title: movie['original_title'],
-    overview: movie['overview'],
-    poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
-    rating: movie['vote_average']
-  })
+  movies.each do |movie|
+    puts "Adding #{movie['original_title']}"
+    Movie.create!({
+      title: movie['original_title'],
+      overview: movie['overview'],
+      poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
+      rating: movie['vote_average']
+    })
+  end
+
+  n += 1
 end
 
 # puts 'Creating lists...'
