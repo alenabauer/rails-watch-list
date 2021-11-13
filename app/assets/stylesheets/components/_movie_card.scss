@@ -12,13 +12,26 @@
   transition: 0.4s ease-out;
   box-shadow: 2px 2px 5px rgba(black, 0.5);
   .info-div {
-    position: relative;
     z-index: 3;
     color: $light;
     opacity: 0;
     transform: translateY(30px);
     transition: 0.5s;
     padding: 16px;
+  }
+  .comment {
+    z-index: 3;
+    background-color: $dark-blue;
+    color: $light-blue;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-style: italic;
   }
   &:hover {
 		transform: translateY(8px);
@@ -28,6 +41,10 @@
 		.info-div {
 			opacity: 1;
 			transform: translateY(0px);
+    }
+    .comment {
+      opacity: 0.7;
+      transform: translateY(0px);
     }
   }
   &:before {
@@ -53,5 +70,17 @@
 		top: 0;
 		left: 0;
 		border-radius: 8px;
+  }
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: $light;
+  &:hover {
+    color: $red;
   }
 }

@@ -8,10 +8,11 @@
   <% @list.movies.each do |movie| %>
     <div class="movie-card">
       <img src=<%= movie.poster_url %> alt="movie poster" class='img-div'>
+      <% bookmark = Bookmark.find { |bookmark| bookmark.movie_id == movie.id } %>
+      <div class="comment"><%= bookmark.comment %></div>
       <div class="info-div">
         <h3><%= movie.title %> (<%= movie.rating %>)</h3>
-        <p><%= movie.overview.truncate(300, separator: ' ') %></p>
-        <% bookmark = Bookmark.find { |bookmark| bookmark.movie_id == movie.id } %>
+        <p><%= movie.overview.truncate(180, separator: ' ') %></p>
         <%= link_to list_bookmark_path(@list, bookmark), method: 'delete', data: { confirm: 'Are you sure?' }, class: 'delete-btn' do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
