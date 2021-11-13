@@ -21,7 +21,7 @@
   <% end %>
 </div>
   <%= simple_form_for @list do |f| %>
-    <%= f.input_field :name, placeholder: 'Add a new list', label: false, autocomplete: 'off' %>
+    <%= f.input_field :name, placeholder: 'Add a list with a background', label: false, autocomplete: 'off' %>
     <%= f.input :picture, as: :file, label: false %>
     <%= f.submit '+' %>
   <% end %>
