@@ -1,0 +1,39 @@
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+  color: $light-blue;
+  opacity: .6;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      a {
+        text-decoration: none;
+        color: $light-blue;
+        &:hover{
+          color: $light;
+        }
+      }
+    }
+    .icons {
+      font-size: 32px;
+      i {
+        color: $light-blue;
+        transition: .3s;
+        &:hover {
+          color: $light;
+        }
+      }
+    }
+  }
+}

@@ -10,17 +10,28 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <nav class="navbar my-nav container fixed-top">
-        <%= link_to root_path do %>
-          <p class="navbar-brand">
-            <%= image_tag "logo.svg", alt: "logo", width: 70 %>
-            RailsWatchList
-          </p>
-        <% end %>
-        <%= link_to 'My Lists', lists_path, class: 'nav-item nav-link my-link' %>
-      </nav>
-      <%= yield %>
+    <div class="page-container">
+      <div class="content-wrap">
+        <nav class="navbar my-nav container fixed-top">
+          <%= link_to root_path do %>
+            <p class="navbar-brand">
+              <%= image_tag "logo.svg", alt: "logo", width: 70 %>
+              RailsWatchList
+            </p>
+          <% end %>
+          <%= link_to 'My Lists', lists_path, class: 'nav-item nav-link my-link' %>
+        </nav>
+        <%= yield %>
+      </div>
+      <div class="footer">
+        <div class="container">
+          <p>@2021 Created by Alena Bauer. With support from <a href="https://www.lewagon.com" target="_blank">Le Wagon</a></p>
+          <div class="icons">
+            <a href="https://github.com/alenabauer/" target="_blank"><i class="fab fa-github-square"></i></a>
+            <a href="https://www.linkedin.com/in/alenabauer/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
