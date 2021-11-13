@@ -9,6 +9,11 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
 
+import { initSortable } from './plugins/init_sortable';
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+initSortable();

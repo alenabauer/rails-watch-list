@@ -33,6 +33,9 @@
     width: 100%;
     font-style: italic;
   }
+  &:active {
+    cursor: grabbing;
+  }
   &:hover {
 		transform: translateY(8px);
 		&:before {
@@ -83,4 +86,13 @@
   &:hover {
     color: $red;
   }
+}
+
+#results li {
+  cursor: grab;
+}
+
+#results li.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
 }
