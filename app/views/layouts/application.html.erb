@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
@@ -19,7 +19,15 @@
               RailsWatchList
             </p>
           <% end %>
-          <%= link_to 'My Lists', lists_path, class: 'nav-item nav-link my-link' %>
+          <div class="my-dropdown">
+            <%= link_to 'My Lists', lists_path, class: "nav-item" %>
+            <div class="dropdown-content">
+              <% List.all.each do |list| %>
+                <%= link_to list.name, list_path(list.id) %>
+              <% end %>
+            </div>
+          </div>
+
         </nav>
         <%= yield %>
       </div>
