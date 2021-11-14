@@ -12,8 +12,10 @@
       <div class="comment"><%= bookmark.comment %></div>
       <div class="info-div">
         <h3><%= movie.title %> (<%= movie.rating %>)</h3>
-        <p><%= movie.overview.truncate(180, separator: ' ') %></p>
-        <%= link_to list_bookmark_path(@list, bookmark), method: 'delete', data: { confirm: 'Are you sure?' }, class: 'delete-btn' do %>
+        <p><%= movie.overview.truncate(180, separator: ' ') %>
+          <%= link_to 'Read More', list_bookmark_path(@list, bookmark) %>
+        </p>
+        <%= link_to list_bookmark_path(@list, bookmark), method: 'delete', data: { confirm: 'Are you sure?' }, id: 'delete-btn' do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>

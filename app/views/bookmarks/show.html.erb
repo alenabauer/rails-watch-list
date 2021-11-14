@@ -1,0 +1,16 @@
+<div class="banner container">
+  <div>
+    <h2><%= @movie.title %></h2>
+  </div>
+  <%= link_to list_path(@list), class: 'my-btn' do %>
+    Back to <%= @list.name %>
+  <% end %>
+</div>
+<div class="container movie-page">
+  <img src=<%= @movie.poster_url %> alt="movie poster" class='movie-img'>
+  <div class="movie-info">
+    <p class="rating">Rating: <%= @movie.rating %>/10</p>
+    <h3>Overview</h3>
+    <p class="description"><%= @movie.overview %></p>
+  </div>
+</div>

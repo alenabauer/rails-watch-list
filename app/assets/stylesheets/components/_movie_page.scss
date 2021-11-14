@@ -1,0 +1,19 @@
+.movie-page {
+  display: flex;
+  gap: 32px;
+  .movie-img{
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(black, 0.5);
+  }
+  .movie-info{
+    color: $light;
+    .rating {
+      color: $light-blue;
+    }
+    .description {
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+}

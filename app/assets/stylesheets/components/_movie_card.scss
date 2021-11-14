@@ -18,6 +18,13 @@
     transform: translateY(30px);
     transition: 0.5s;
     padding: 16px;
+    padding-bottom: 32px;
+    a {
+      color: $light-blue;
+      &:hover {
+        color: $light;
+      }
+    }
   }
   .comment {
     z-index: 3;
@@ -76,7 +83,7 @@
   }
 }
 
-.delete-btn {
+#delete-btn {
   position: absolute;
   bottom: 8px;
   right: 8px;
