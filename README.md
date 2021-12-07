@@ -1,24 +1,5 @@
-# README
+# WATCH LIST
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Web App that helps you keep track of movies you like or want to watch later.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Built with Ruby on Rails, TMDB API, JavaScript (e.g. Sortable.js plugin).
